@@ -23,6 +23,7 @@ public class MainActivity extends Activity {
         final Button p1Plus5 = (Button) findViewById(R.id.player1plus5);
         final Button p1Minus5 = (Button) findViewById(R.id.player1minus5);
 
+
         final TextView p2Display = (TextView) findViewById(R.id.player2score);
         final Button p2Plus = (Button) findViewById(R.id.player2plus);
         final Button p2Minus = (Button) findViewById(R.id.player2minus);
@@ -40,6 +41,7 @@ public class MainActivity extends Activity {
         final Button p4Minus = (Button) findViewById(R.id.player4minus);
         final Button p4Plus5 = (Button) findViewById(R.id.player4plus5);
         final Button p4Minus5 = (Button) findViewById(R.id.player4minus5);
+
 
         // Set Listeners for Player 1 buttons
         p1Plus.setOnClickListener(new View.OnClickListener() {
@@ -175,14 +177,15 @@ public class MainActivity extends Activity {
                 adjustAndDisplayLife(lifeCount, p4Display, 4);
             }
         });
+
     }
 
     public void adjustAndDisplayLife(int newLife, TextView display, int playerNumber) {
         if (newLife <= 0) {
-            display.setText(0);
-            deadPlayerDisplay.setText("Player " + playerNumber + "LOSES!");
+            display.setText("0");
+            deadPlayerDisplay.setText("Player " + playerNumber + " LOSES!");
         } else {
-            display.setText(newLife);
+            display.setText("" + newLife);
         }
     }
 }
